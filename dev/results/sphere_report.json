@@ -1,84 +1,83 @@
 {
     "info" : {
         "generated_by" : "MachLine (c) 2023 USU Aerolab",
-        "executed" : "Wed Aug 23 10:35:01 2023"
+        "executed" : "Fri Nov  3 08:28:25 2023"
     },
     "mesh_info" : {
-        "N_body_panels" : 440,
-        "N_body_vertices" : 222,
+        "N_body_panels" : 0,
+        "N_body_vertices" : 0,
         "N_wake_panels" : 0,
-        "average_characteristic_length" : 1.63927165256750E-001,
+        "average_characteristic_length" : NaN,
         "max_flow_turning_angle" : 9.00000000000000E+001
     },
     "solver_results" : {
         "solver_status_code" : 0,
-        "system_dimension" : 222,
+        "system_dimension" : 0,
         "timing" : {
-            "system_sorting" : 2.30000000000000E-006,
-            "preconditioner" : 4.35350000000000E-003,
-            "matrix_solver" : 1.41090000000000E-003
+            "system_sorting" : 6.22000000000000E-005,
+            "preconditioner" : 4.10000000000000E-006,
+            "matrix_solver" : 6.62100000000000E-004
         },
-        "iterations" : 50,
+        "iterations" : 0,
+        "system_lower_bandwidth" : 0,
         "residual" : {
-            "max" : 3.90869917840843E-002,
-            "norm" : 4.74767205964982E-001
+            "max" : -1.79769313486232E+308,
+            "norm" : 0.00000000000000E+000
         }
     },
     "pressure_calculations" : {
-        "incompressible_rule" : {
-            "max" : 9.33674331975440E-001,
-            "min" : -1.21107725533643E+000
+        "isentropic_rule" : {
+            "max" : -1.79769313486232E+308,
+            "min" : 1.79769313486232E+308
         }
     },
     "total_forces" : {
-        "Cx" : 1.06888512238665E-012,
-        "Cy" : 3.48425376042215E-016,
-        "Cz" : 5.72196190053479E-017
+        "Cx" : 0.00000000000000E+000,
+        "Cy" : 0.00000000000000E+000,
+        "Cz" : 0.00000000000000E+000
     },
     "total_moments" : {
-        "CMx" : -1.27868093717509E-017,
-        "CMy" : -3.42770516831292E-016,
-        "CMz" : 4.62086965913322E-016
+        "CMx" : 0.00000000000000E+000,
+        "CMy" : 0.00000000000000E+000,
+        "CMz" : 0.00000000000000E+000
     },
     "input" : {
         "flow" : {
             "freestream_velocity" : [
-                    1.00000000000000E+000,
+                    1.00000000000000E+002,
                     0.00000000000000E+000,
-                    0.00000000000000E+000
+                    5.00000000000000E+000
                 ],
-            "freestream_mach_number" : 0.00000000000000E+000
+            "freestream_mach_number" : 1.60000000000000E+000
         },
         "geometry" : {
-            "file" : "dev/meshes/small_sphere.stl",
-            "wake_model" : {
-                "wake_present" : false
-            },
+            "file" : "dev/meshes/FreeCAD_Sphere.stl",
+            "spanwise_axis" : "+y",
             "singularity_order" : "lower",
+            "max_continuity_angle" : 5.00000000000000E+000,
+            "wake_model" : {
+                "wake_present" : true,
+                "append_wake" : true
+            },
             "reference" : {
-                "area" : 7.85398100000000E-001
+                "area" : 1.00000000000000E+000
             }
         },
         "solver" : {
-            "formulation" : "neumann-mass-flux",
-            "matrix_solver" : "GMRES",
-            "write_A_and_b" : true,
-            "run_checks" : true
+            "formulation" : "dirichlet-morino",
+            "control_point_offset" : 1.00000000000000E-003
         },
         "post_processing" : {
             "pressure_rules" : {
-                "incompressible" : true
+                "isentropic" : true
             }
         },
         "output" : {
-            "body_file" : "dev/results/sphere.vtk",
-            "control_point_file" : "dev/results/sphere_control_points.vtk",
-            "offbody_points" : {
-                "points_file" : "dev/input_files/sphere_offbody_points.csv",
-                "output_file" : "dev/results/sphere_offbody_points.csv"
-            },
+            "body_file" : "dev/results/N2_Geom_1.vtk",
+            "wake_file" : "dev/results/N2_Geom_1_wake.vtk",
+            "control_point_file" : "dev/results/N2_Geom_1_control_points.vtk",
             "report_file" : "dev/results/sphere_report.json"
         }
     },
-    "total_runtime" : 2.50000000000000E-001
+    "total_runtime" : 3.12000000000000E-001
 }

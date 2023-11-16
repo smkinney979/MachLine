@@ -7,7 +7,7 @@
         ]
     },
     "geometry": {
-        "file": "studies/sphere/meshes/random_sphere_ultra_fine_sample_9.vtk",
+        "file": "c:/Users/skinn/Documents/Machline/MachLine/studies/sphere/meshes/test_write.stl",
         "spanwise_axis": "+y",
         "wake_model": {
             "wake_present": false
@@ -17,7 +17,7 @@
         }
     },
     "solver": {
-        "formulation": "morino",
+        "formulation": "dirichlet-morino",
         "control_point_offset": 1.1e-06,
         "control_point_offset_type": "direct",
         "matrix_solver": "BJAC",

@@ -18,7 +18,7 @@
         }
     },
     "solver": {
-        "formulation": "morino",
+        "formulation": "dirichlet-morino",
         "run_checks": true
     },
     "post_processing": {
